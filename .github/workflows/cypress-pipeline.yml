@@ -12,17 +12,17 @@ jobs:
       - name: Checkout/Clone do projeto
         uses: actions/checkout@v3
 
-      # Instalar as dependências do projeto
-      - name: Instalar dependências do projeto
-        run: npm ci
+      # # Instalar as dependências do projeto
+      # - name: Instalar dependências do projeto
+      #   run: npm ci
 
-      # Iniciar o servidor (se necessário para o seu teste)
-      - name: Iniciar servidor
-        run: npm start & # Executa o servidor em segundo plano
+      # # Iniciar o servidor (se necessário para o seu teste)
+      # - name: Iniciar servidor
+      #   run: npm start & # Executa o servidor em segundo plano
 
-      # Aguardar o servidor iniciar e rodar os testes Cypress
-      - name: Aguardar servidor
-        run: npx wait-on http://localhost:3000 # Aguarda a resposta do servidor
+      # # Aguardar o servidor iniciar e rodar os testes Cypress
+      # - name: Aguardar servidor
+      #   run: npx wait-on http://localhost:3000 # Aguarda a resposta do servidor
 
       # Executar os testes Cypress
       - name: Run Cypress Tests
