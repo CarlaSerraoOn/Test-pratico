@@ -1,15 +1,15 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'mix4kx',
+  projectId: 'du3x9v',
   e2e: {
     reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
       charts: true,
-      reportTitle:'Projeto Pratico do QAzando',
+      reportTitle: 'Projeto Pratico do QAzando',
       reportPageTitle: 'Projeto Pratico do QAzando'
     },
-    baseUrl:"https://automationpratice.com.br/",
+    baseUrl: "https://automationpratice.com.br/",
     defaultCommandTimeout: 5000,
     viewportWidth: 1920,
     viewportHeight: 1080,
@@ -18,4 +18,3 @@ module.exports = defineConfig({
     },
   },
 });
- 
