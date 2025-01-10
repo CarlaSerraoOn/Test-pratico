@@ -1,36 +1,29 @@
-# nome da pipeline
-name: Run Basic Testes
+# Nome da pipeline
+name: Run Basic Tests
 
-# em que momento será executada
+# Em que momento será executada
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  # o que vai ser feito nessa pipeline
-  # só teremos um job: rodar os testes
+  # O que vai ser feito nessa pipeline
   cypress-run:
-    # maquina que será executada
+    # Máquina que será usada
     runs-on: ubuntu-latest
-    #passo a passo pra rodar os testes
+    # Passo a passo para rodar os testes
     steps:
-
-      # Ação 
-      - name: Executar ação local
-        uses: ./github/workflows/cypress-pipeline.yml
-
-
-      # clone do projeto
+      # Clonar o repositório
       - name: Checkout/Clone do projeto
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      # exemplo de execução no terminal
-      - name: instalar dependencias do projeto (exemplo)
+      # Instalar dependências
+      - name: Instalar dependências do projeto
         run: npm install
 
-      # execução e configuração do projeto
-      - name: Run testes
-        uses: cypress-io/github-action@v6
+      # Executar os testes
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v5
         with:
           record: true
         env:
